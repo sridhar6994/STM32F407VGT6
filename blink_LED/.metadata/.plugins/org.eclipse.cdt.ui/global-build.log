@@ -1,0 +1,299 @@
+20:50:56 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+   text	   data	    bss	    dec	    hex	filename
+   5812	     12	   1572	   7396	   1ce4	blink_LED.elf
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+Finished building: default.size.stdout
+ 
+Finished building: blink_LED.list
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+ 
+21:23:58 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     12	   1572	   7488	   1d40	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+Finished building: default.size.stdout
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+ 
+Finished building: blink_LED.list
+ 
+21:24:13 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     12	   1572	   7488	   1d40	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+ 
+21:24:39 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     12	   1572	   7488	   1d40	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.list
+Finished building: blink_LED.bin
+ 
+ 
+ 
+21:24:48 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+Finished building: default.size.stdout
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+ 
+21:24:56 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+Finished building: blink_LED.list
+ 
+ 
+21:25:27 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+ 
+21:26:03 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+Finished building: default.size.stdout
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+Finished building: blink_LED.list
+ 
+ 
+21:26:55 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     12	   1572	   7488	   1d40	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+ 
+Finished building: blink_LED.list
+ 
+21:27:19 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     12	   1572	   7488	   1d40	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+ 
+21:29:55 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.bin
+Finished building: blink_LED.hex
+ 
+ 
+Finished building: blink_LED.list
+ 
+21:31:17 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+ 
+Finished building: blink_LED.list
+ 
+21:31:48 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     12	   1572	   7492	   1d44	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+ 
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+21:33:38 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5812	     12	   1572	   7396	   1ce4	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+ 
+ 
+Finished building: blink_LED.list
+ 
+21:52:20 **** Incremental Build of configuration Debug for project blink_LED ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blink_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\blink_LED\blink_LED\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blink_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blink_LED.elf
+ 
+arm-none-eabi-size  blink_LED.elf 
+arm-none-eabi-objdump -h -S blink_LED.elf  > "blink_LED.list"
+   text	   data	    bss	    dec	    hex	filename
+   5812	     12	   1572	   7396	   1ce4	blink_LED.elf
+arm-none-eabi-objcopy  -O ihex blink_LED.elf  "blink_LED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary blink_LED.elf  "blink_LED.bin"
+ 
+Finished building: blink_LED.hex
+Finished building: blink_LED.bin
+Finished building: blink_LED.list
+ 
+ 
+ 

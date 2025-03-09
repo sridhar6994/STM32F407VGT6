@@ -1,0 +1,35 @@
+06:28:04 **** Incremental Build of configuration Debug for project ADC ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:187:25: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  187 |                         sprintf(buffer, "%lu", adcValue);
+      |                         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:187:25: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  187 |                         sprintf(buffer, "%lu", adcValue);
+      |                         ^~~~~~~
+../Core/Src/main.c:187:25: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\ADC\ADC\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ADC.elf
+ 
+arm-none-eabi-size  ADC.elf 
+arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  11272	     92	   1996	  13360	   3430	ADC.elf
+arm-none-eabi-objcopy  -O ihex ADC.elf  "ADC.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary ADC.elf  "ADC.bin"
+ 
+Finished building: ADC.hex
+Finished building: ADC.list
+Finished building: ADC.bin
+ 
+ 
+ 
+
+06:28:05 Build Finished. 0 errors, 2 warnings. (took 942ms)
+

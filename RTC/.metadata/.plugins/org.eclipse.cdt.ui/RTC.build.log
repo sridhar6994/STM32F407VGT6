@@ -1,0 +1,35 @@
+08:39:33 **** Incremental Build of configuration Debug for project RTC ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'RTC_DisplayTimeOnLCD':
+../Core/Src/main.c:170:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  170 |     sprintf(buffer, "Time: %02d:%02d:%02d", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |     ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:170:5: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  170 |     sprintf(buffer, "Time: %02d:%02d:%02d", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |     ^~~~~~~
+../Core/Src/main.c:170:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "RTC.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\RTC\RTC\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RTC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RTC.elf
+ 
+arm-none-eabi-size  RTC.elf 
+arm-none-eabi-objdump -h -S RTC.elf  > "RTC.list"
+   text	   data	    bss	    dec	    hex	filename
+  11392	     92	   1956	  13440	   3480	RTC.elf
+arm-none-eabi-objcopy  -O ihex RTC.elf  "RTC.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary RTC.elf  "RTC.bin"
+ 
+Finished building: RTC.hex
+ 
+Finished building: RTC.bin
+ 
+Finished building: RTC.list
+ 
+
+08:39:34 Build Finished. 0 errors, 2 warnings. (took 738ms)
+

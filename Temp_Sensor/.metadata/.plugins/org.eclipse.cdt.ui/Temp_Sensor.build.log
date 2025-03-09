@@ -1,0 +1,22 @@
+06:38:44 **** Incremental Build of configuration Debug for project Temp_Sensor ****
+make -j24 all 
+arm-none-eabi-gcc -o "Temp_Sensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\Temp_Sensor\Temp_Sensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Temp_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Temp_Sensor.elf
+ 
+arm-none-eabi-size  Temp_Sensor.elf 
+arm-none-eabi-objdump -h -S Temp_Sensor.elf  > "Temp_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11316	     92	   1996	  13404	   345c	Temp_Sensor.elf
+arm-none-eabi-objcopy  -O ihex Temp_Sensor.elf  "Temp_Sensor.hex"
+arm-none-eabi-objcopy  -O binary Temp_Sensor.elf  "Temp_Sensor.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Temp_Sensor.hex
+Finished building: Temp_Sensor.list
+Finished building: Temp_Sensor.bin
+ 
+ 
+ 
+
+06:38:45 Build Finished. 0 errors, 0 warnings. (took 629ms)
+

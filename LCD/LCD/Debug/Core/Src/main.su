@@ -1,0 +1,12 @@
+../Core/Src/main.c:74:6:LCD_Init	8	static
+../Core/Src/main.c:86:6:LCD_Command	16	static
+../Core/Src/main.c:94:6:LCD_Char	16	static
+../Core/Src/main.c:102:6:LCD_String	16	static
+../Core/Src/main.c:109:6:LCD_SetCursor	24	static
+../Core/Src/main.c:115:6:LCD_Clear	8	static
+../Core/Src/main.c:121:6:LCD_Send4Bits	16	static
+../Core/Src/main.c:131:6:LCD_EnablePulse	8	static
+../Core/Src/main.c:144:5:main	8	static
+../Core/Src/main.c:191:6:SystemClock_Config	88	static
+../Core/Src/main.c:233:13:MX_GPIO_Init	32	static
+../Core/Src/main.c:267:6:Error_Handler	4	static,ignoring_inline_asm

@@ -1,0 +1,16 @@
+../Core/Src/main.c:76:6:LCD_Init	1
+../Core/Src/main.c:88:6:LCD_Command	1
+../Core/Src/main.c:96:6:LCD_Char	1
+../Core/Src/main.c:104:6:LCD_String	2
+../Core/Src/main.c:111:6:LCD_SetCursor	2
+../Core/Src/main.c:117:6:LCD_Clear	1
+../Core/Src/main.c:123:6:LCD_Send4Bits	1
+../Core/Src/main.c:133:6:LCD_EnablePulse	1
+../Core/Src/main.c:141:19:EEPROM_WriteByte	1
+../Core/Src/main.c:147:19:EEPROM_ReadByte	2
+../Core/Src/main.c:154:6:Read_Display_EEPROM	2
+../Core/Src/main.c:176:5:main	1
+../Core/Src/main.c:231:6:SystemClock_Config	3
+../Core/Src/main.c:273:13:MX_I2C1_Init	2
+../Core/Src/main.c:307:13:MX_GPIO_Init	1
+../Core/Src/main.c:342:6:Error_Handler	1

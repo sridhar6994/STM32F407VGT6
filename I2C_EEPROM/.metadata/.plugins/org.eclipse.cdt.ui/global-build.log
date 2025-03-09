@@ -1,0 +1,179 @@
+07:40:05 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13464	     92	   1988	  15544	   3cb8	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+ 
+Finished building: I2C_EEPROM.hex
+Finished building: I2C_EEPROM.bin
+ 
+ 
+Finished building: I2C_EEPROM.list
+ 
+07:41:25 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Read_Display_EEPROM':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:161:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:161:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13472	     92	   1988	  15552	   3cc0	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+ 
+Finished building: I2C_EEPROM.hex
+Finished building: I2C_EEPROM.list
+Finished building: I2C_EEPROM.bin
+ 
+ 
+ 
+07:42:59 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Read_Display_EEPROM':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:161:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:161:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13472	     92	   1988	  15552	   3cc0	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+ 
+Finished building: I2C_EEPROM.hex
+Finished building: I2C_EEPROM.list
+ 
+Finished building: I2C_EEPROM.bin
+ 
+ 
+07:47:23 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Read_Display_EEPROM':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:161:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:161:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13472	     92	   1988	  15552	   3cc0	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+ 
+Finished building: I2C_EEPROM.hex
+ 
+Finished building: I2C_EEPROM.list
+Finished building: I2C_EEPROM.bin
+ 
+ 
+08:05:34 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Read_Display_EEPROM':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:161:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  161 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:161:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13472	     92	   1988	  15552	   3cc0	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+Finished building: default.size.stdout
+ 
+Finished building: I2C_EEPROM.hex
+Finished building: I2C_EEPROM.bin
+ 
+Finished building: I2C_EEPROM.list
+ 
+ 
+08:07:21 **** Incremental Build of configuration Debug for project I2C_EEPROM ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Read_Display_EEPROM':
+../Core/Src/main.c:162:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  162 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:162:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  162 |         sprintf(buffer, "Data: 0x%02X", eeprom_data);
+      |         ^~~~~~~
+../Core/Src/main.c:162:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_EEPROM.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\I2C_EEPROM\I2C_EEPROM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_EEPROM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_EEPROM.elf
+ 
+arm-none-eabi-size  I2C_EEPROM.elf 
+arm-none-eabi-objdump -h -S I2C_EEPROM.elf  > "I2C_EEPROM.list"
+   text	   data	    bss	    dec	    hex	filename
+  13496	     92	   1988	  15576	   3cd8	I2C_EEPROM.elf
+arm-none-eabi-objcopy  -O ihex I2C_EEPROM.elf  "I2C_EEPROM.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary I2C_EEPROM.elf  "I2C_EEPROM.bin"
+ 
+Finished building: I2C_EEPROM.hex
+Finished building: I2C_EEPROM.bin
+Finished building: I2C_EEPROM.list
+ 
+ 
+ 
