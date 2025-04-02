@@ -1,0 +1,579 @@
+12:47:42 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   5252	     12	   1572	   6836	   1ab4	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.list
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.bin
+ 
+ 
+12:59:05 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   6184	     12	   1572	   7768	   1e58	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 
+13:20:52 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:137:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+  137 | TIM_HandleTypeDef htim2;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c: In function 'delay_us':
+../Core/Src/main.c:143:5: warning: implicit declaration of function '__HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  143 |     __HAL_TIM_SET_COUNTER(&htim2, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:144:12: warning: implicit declaration of function '__HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  144 |     while (__HAL_TIM_GET_COUNTER(&htim2) < time);
+      |            ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:213:14: error: request for member 'Instance' in something not a structure or union
+  213 |         htim2.Instance = TIM2;
+      |              ^
+../Core/Src/main.c:214:14: error: request for member 'Init' in something not a structure or union
+  214 |         htim2.Init.Prescaler = 84 - 1;
+      |              ^
+../Core/Src/main.c:215:14: error: request for member 'Init' in something not a structure or union
+  215 |         htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |              ^
+../Core/Src/main.c:215:34: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  215 |         htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                                  ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:215:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:216:14: error: request for member 'Init' in something not a structure or union
+  216 |         htim2.Init.Period = 0xFFFF;
+      |              ^
+../Core/Src/main.c:217:14: error: request for member 'Init' in something not a structure or union
+  217 |         htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |              ^
+../Core/Src/main.c:217:36: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  217 |         htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:218:9: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+  218 |         HAL_TIM_Base_Init(&htim2);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:219:9: warning: implicit declaration of function 'HAL_TIM_Base_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+  219 |         HAL_TIM_Base_Start(&htim2);
+      |         ^~~~~~~~~~~~~~~~~~
+      |         HAL_DMA_Start
+../Core/Src/main.c:230:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  230 |           sprintf(buffer, "%f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:230:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  230 |           sprintf(buffer, "%f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:230:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:21:20 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:137:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+  137 | TIM_HandleTypeDef htim2;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c: In function 'delay_us':
+../Core/Src/main.c:143:5: warning: implicit declaration of function '__HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  143 |     __HAL_TIM_SET_COUNTER(&htim2, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:144:12: warning: implicit declaration of function '__HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  144 |     while (__HAL_TIM_GET_COUNTER(&htim2) < time);
+      |            ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:213:14: error: request for member 'Instance' in something not a structure or union
+  213 |         htim2.Instance = TIM2;
+      |              ^
+../Core/Src/main.c:214:14: error: request for member 'Init' in something not a structure or union
+  214 |         htim2.Init.Prescaler = 84 - 1;
+      |              ^
+../Core/Src/main.c:215:14: error: request for member 'Init' in something not a structure or union
+  215 |         htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |              ^
+../Core/Src/main.c:215:34: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  215 |         htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                                  ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:215:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:216:14: error: request for member 'Init' in something not a structure or union
+  216 |         htim2.Init.Period = 0xFFFF;
+      |              ^
+../Core/Src/main.c:217:14: error: request for member 'Init' in something not a structure or union
+  217 |         htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |              ^
+../Core/Src/main.c:217:36: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  217 |         htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:218:9: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+  218 |         HAL_TIM_Base_Init(&htim2);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:219:9: warning: implicit declaration of function 'HAL_TIM_Base_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+  219 |         HAL_TIM_Base_Start(&htim2);
+      |         ^~~~~~~~~~~~~~~~~~
+      |         HAL_DMA_Start
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:24:44 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  226 |           sprintf(buffer, "%f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:226:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  226 |           sprintf(buffer, "%f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:226:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13212	     92	   2004	  15308	   3bcc	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+Finished building: default.size.stdout
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 
+13:29:14 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  226 |           sprintf(buffer, "%.2f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:226:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  226 |           sprintf(buffer, "%.2f" , distance);
+      |           ^~~~~~~
+../Core/Src/main.c:226:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13216	     92	   2004	  15312	   3bd0	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+Finished building: default.size.stdout
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 
+13:31:28 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:228:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  228 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:228:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  228 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:228:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13264	     92	   2012	  15368	   3c08	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.bin
+ 
+Finished building: UltrasonicSensor.list
+ 
+ 
+13:32:56 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:228:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  228 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:228:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  228 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:228:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11864	     92	   1996	  13952	   3680	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.list
+Finished building: UltrasonicSensor.bin
+ 
+ 
+ 
+13:34:46 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "%.2f" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11864	     92	   1996	  13952	   3680	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.list
+ 
+ 
+ 
+13:35:35 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  10768	     92	   1996	  12856	   3238	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.list
+Finished building: UltrasonicSensor.bin
+ 
+ 
+ 
+13:35:51 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-size  UltrasonicSensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10768	     92	   1996	  12856	   3238	UltrasonicSensor.elf
+Finished building: default.size.stdout
+ 
+13:37:21 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:225:37: warning: unused variable 'distance2' [-Wunused-variable]
+  225 |           static int distance1 = 0, distance2 = 0;
+      |                                     ^~~~~~~~~
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  10768	     92	   1996	  12856	   3238	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.list
+Finished building: UltrasonicSensor.bin
+ 
+ 
+ 
+13:38:34 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "%d" , distance1);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13212	     92	   2012	  15316	   3bd4	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+ 
+Finished building: UltrasonicSensor.list
+Finished building: UltrasonicSensor.bin
+ 
+ 
+13:39:33 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "%ld" , time_diff);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "%ld" , time_diff);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13216	     92	   2012	  15320	   3bd8	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.list
+ 
+ 
+ 
+13:39:41 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-size  UltrasonicSensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13216	     92	   2012	  15320	   3bd8	UltrasonicSensor.elf
+Finished building: default.size.stdout
+ 
+13:42:34 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "  D: %04ld cm    " , time_diff);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "  D: %04ld cm    " , time_diff);
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:227:45: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  227 |           sprintf(buffer, "  D: %04ld cm    " , time_diff);
+      |                                             ^
+../Core/Src/main.c:227:11: note: 'sprintf' output between 17 and 24 bytes into a destination of size 16
+  227 |           sprintf(buffer, "  D: %04ld cm    " , time_diff);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  13232	     92	   2012	  15336	   3be8	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.list
+ 
+ 
+ 
+13:52:09 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  227 |           sprintf(buffer, "  D: %02lu.%02lu meter ", distance_m, distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:227:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  227 |           sprintf(buffer, "  D: %02lu.%02lu meter ", distance_m, distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:227:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:227:50: warning: ' meter ' directive writing 7 bytes into a region of size between 0 and 6 [-Wformat-overflow=]
+  227 |           sprintf(buffer, "  D: %02lu.%02lu meter ", distance_m, distance_cm);  // Format: "X.XX m"
+      |                                            ~~~~~~^
+../Core/Src/main.c:227:11: note: 'sprintf' output between 18 and 34 bytes into a destination of size 16
+  227 |           sprintf(buffer, "  D: %02lu.%02lu meter ", distance_m, distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11148	     92	   2012	  13252	   33c4	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+ 
+Finished building: UltrasonicSensor.hex
+Finished building: UltrasonicSensor.bin
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 
+13:59:25 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:226:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:226:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:226:46: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |                                              ^
+../Core/Src/main.c:226:11: note: 'sprintf' output between 17 and 24 bytes into a destination of size 16
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11120	     92	   2004	  13216	   33a0	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+Finished building: default.size.stdout
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 

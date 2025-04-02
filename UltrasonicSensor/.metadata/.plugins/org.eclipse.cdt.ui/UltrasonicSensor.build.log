@@ -1,0 +1,41 @@
+13:59:25 **** Incremental Build of configuration Debug for project UltrasonicSensor ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:226:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~
+../Core/Src/main.c:226:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:226:46: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |                                              ^
+../Core/Src/main.c:226:11: note: 'sprintf' output between 17 and 24 bytes into a destination of size 16
+  226 |           sprintf(buffer, "Distance: %03lu cm", distance_cm);  // Format: "X.XX m"
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\UltrasonicSensor\UltrasonicSensor\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UltrasonicSensor.elf
+ 
+arm-none-eabi-size  UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S UltrasonicSensor.elf  > "UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  11120	     92	   2004	  13216	   33a0	UltrasonicSensor.elf
+arm-none-eabi-objcopy  -O ihex UltrasonicSensor.elf  "UltrasonicSensor.hex"
+arm-none-eabi-objcopy  -O binary UltrasonicSensor.elf  "UltrasonicSensor.bin"
+Finished building: default.size.stdout
+ 
+Finished building: UltrasonicSensor.bin
+Finished building: UltrasonicSensor.hex
+ 
+ 
+Finished building: UltrasonicSensor.list
+ 
+
+13:59:26 Build Finished. 0 errors, 3 warnings. (took 1s.402ms)
+

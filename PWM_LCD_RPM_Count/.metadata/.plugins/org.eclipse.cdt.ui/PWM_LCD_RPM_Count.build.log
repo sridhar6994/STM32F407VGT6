@@ -1,0 +1,42 @@
+20:44:32 **** Incremental Build of configuration Debug for project PWM_LCD_RPM_Count ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:215:25: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  215 |                         sprintf(buffer, "    RPM: %04lu   ", RPM_value);
+      |                         ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:215:25: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  215 |                         sprintf(buffer, "    RPM: %04lu   ", RPM_value);
+      |                         ^~~~~~~
+../Core/Src/main.c:215:25: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:215:59: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  215 |                         sprintf(buffer, "    RPM: %04lu   ", RPM_value);
+      |                                                           ^
+../Core/Src/main.c:215:25: note: 'sprintf' output between 17 and 23 bytes into a destination of size 16
+  215 |                         sprintf(buffer, "    RPM: %04lu   ", RPM_value);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "PWM_LCD_RPM_Count.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project\STM32_PROJECT\PWM_LCD_RPM_Count\PWM_LCD_RPM_Count\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LCD_RPM_Count.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LCD_RPM_Count.elf
+ 
+arm-none-eabi-size  PWM_LCD_RPM_Count.elf 
+arm-none-eabi-objdump -h -S PWM_LCD_RPM_Count.elf  > "PWM_LCD_RPM_Count.list"
+   text	   data	    bss	    dec	    hex	filename
+  15432	     96	   2072	  17600	   44c0	PWM_LCD_RPM_Count.elf
+arm-none-eabi-objcopy  -O ihex PWM_LCD_RPM_Count.elf  "PWM_LCD_RPM_Count.hex"
+arm-none-eabi-objcopy  -O binary PWM_LCD_RPM_Count.elf  "PWM_LCD_RPM_Count.bin"
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LCD_RPM_Count.hex
+ 
+Finished building: PWM_LCD_RPM_Count.bin
+ 
+Finished building: PWM_LCD_RPM_Count.list
+ 
+
+20:44:33 Build Finished. 0 errors, 3 warnings. (took 813ms)
+
